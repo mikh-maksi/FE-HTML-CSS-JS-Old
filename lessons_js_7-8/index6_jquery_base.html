@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<ul>
+		<li class = "example">Text 1</li>
+		<li class = "example">Text 2</li>
+		<li class = "example">Text 3</li>
+		<li class = "example">Text 4</li>
+		<li class = "example">Text 5</li>
+	</ul>
+	<button class = "btn">click</button>
+	<script>
+	$('.btn').click(function () {console.log("!!");
+ 
+ $(".example").each(function(i) {
+   if ((parseInt(i))%2==0 ) 
+	$(this).wrapInner('<span></span>');
+   else $(this).wrapInner('<strong></strong>');
+                                   });
+});    
+	//ready
+	</script>
+</body>
+</html>

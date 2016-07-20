@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var n_list=10;
+	var a = {lastname: "Ivanov",born:1990,avg_ball:4.5};
+	console.log(a);
+	
+	function lastnames(n){
+		var lastname;
+		switch(n){
+		case 1: lastname = "Shevchenko"; break;
+		case 2: lastname = "Vakarchuk"; break;
+		case 3: lastname = "Platov"; break;
+		case 4: lastname = "Kizim"; break;
+		case 5: lastname = "Gogol"; break;
+		case 6: lastname = "Vernes"; break;
+		case 7: lastname = "Odarchuk"; break;
+		default: lastname = "Pisanka"; break;
+		}
+		return lastname;
+	}
+	
+	function Student(){
+		this.lastname = lastnames(Math.floor(Math.random()*7));
+		this.born = 1990;
+		this.avg_ball = Math.floor(Math.random()*50)/10;
+	}
+	
+	var student = new Student();
+	console.log(student);
+	var students = {};
+	
+	for (var i=0;i<n_list;i++){
+		students[i]= new Student();
+	}
+	console.log(students);
+	
+	function students_list(data){
+		var i,p;
+
+		for (i=0;i<n_list;i++){
+			p = document.createElement('p');
+			p.innerHTML = data[i].lastname+" "+data[i].born+" "+data[i].avg_ball;
+			document.body.appendChild(p);
+		}
+		
+	
+	}
+	students_list(students);
+	
+	</script>
+</body>
+</html>
