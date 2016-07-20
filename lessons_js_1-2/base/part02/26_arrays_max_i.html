@@ -1,0 +1,20 @@
+<script>
+	var a = Array();
+	for (var i=0;i<5;i++)
+	{
+		a[i] = Math.floor(Math.random()*10);
+	}
+	console.log(a);
+	var max=a[0];
+	var n_max = 0;
+	for (var i=0;i<5;i++)
+		{
+			if (max < a[i])
+			{
+				max = a[i];
+				n_max = i;
+			}
+		}
+	console.log(max);
+	console.log(n_max);
+</script>

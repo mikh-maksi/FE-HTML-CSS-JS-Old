@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+</head>
+<body>
+	<div style ="background:gray;width:50px;height:20px;" id ="d1"></div>
+<script>
+	console.log(d1);
+	//console.log(d1.getAttribute("id"));
+	var wi = d1.style.width;
+	console.log(wi+10);
+	console.log(Number(wi));
+	console.log(parseInt(wi));
+	
+	console.log('"30"', Number("30"));
+	console.log('true',Number(true));
+	
+	console.log(30, String(30));
+	console.log(true, String(true));
+	
+	console.log(3, Boolean(3));
+	console.log(3, Boolean("f"));
+	console.log("false", Boolean("false"));
+	console.log("", Boolean(""));
+	
+	/*var years = prompt ("Сколько Вам лет?","  *  ","");
+	console.log(parseInt(years));*/
+	
+	var num = 5;
+	var str = "string";
+	var bool = true;
+	
+	
+	
+	console.log('"" + 1 + 0',"  *  ","" + 1 + 0);
+	console.log('"" - 1 + 0',"  *  ","" - 1 + 0);
+	console.log('true + false',"  *  ",true + false);
+	console.log('6 / "3"',"  *  ",6 / "3");
+	console.log('"2" * "3"',"  *  ","2" * "3");
+	console.log('4 + 5 + "px"',"  *  ",4 + 5 + "px");
+	console.log('"$" + 4 + 5',"  *  ","$" + 4 + 5);
+	console.log('"4" - 2',"  *  ","4" - 2);
+	console.log('"4px" - 2',"  *  ","4px" - 2);
+	console.log('7 / 0',"  *  ",7 / 0);
+	console.log('"  -9\\n" + 5',"  *  ","  -9\n" + 5);
+	console.log('"  -9\\n" - 5',"  *  ","  -9\n" - 5);
+	console.log('5 && 2',"  *  ",5 && 2);
+	console.log('2 && 5',"  *  ",2 && 5);
+	console.log('5 || 0',"  *  ",5 || 0);
+	console.log('0 || 5',"  *  ",0 || 5);
+	console.log('null + 1',"  *  ",null + 1);
+	console.log("---------------");
+	console.log('undefined + 1',"  *  ",undefined + 1);
+	console.log("---------------");
+	console.log('null == "\\n0\\n"',"  *  ",null == "\n0\n");
+	console.log("---------------");
+	console.log('+null == +"\\n0\\n"',"  *  ",+null == +"\n0\n");
+
+"  -9\n" + 5
+"  -9\n" - 5
+5 && 2
+
+2 && 5
+
+5 || 0
+
+0 || 5
+null + 1
+undefined + 1
+null == "\n0\n"
++null == +"\n0\n"
+
+	
+// Зачем,"  *  ", в каких ситуациях нужно приводить типы?
+// Общий принцип - когда Вы не знаете точно,"  *  ", что будет введено. А также,"  *  ", если ввод отличается от того,"  *  ", с чем нужно работать
+// Ситуация №1 - чтение данных
+// Ситуация №2 - получаем свойство CSS,"  *  ", где указаны не просто цифры,"  *  ", а цифры с буквами (12px)
+
+
+/*
+"" + 1 + 0
+"" - 1 + 0
+true + false
+6 / "3"
+"2" * "3"
+4 + 5 + "px"
+"$" + 4 + 5
+
+"4" - 2
+
+"4px" - 2
+
+7 / 0
+
+"  -9\n" + 5
+"  -9\n" - 5
+5 && 2
+
+2 && 5
+
+5 || 0
+
+0 || 5
+null + 1
+undefined + 1
+null == "\n0\n"
++null == +"\n0\n"
+
+
+
+*/
+</script>
+</body>
+</html>
