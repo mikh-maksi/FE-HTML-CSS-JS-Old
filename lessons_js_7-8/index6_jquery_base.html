@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<style>
+	span{color:red;}
+	</style>
 </head>
 <body>
 	<ul>
@@ -14,15 +17,29 @@
 		<li class = "example">Text 5</li>
 	</ul>
 	<button class = "btn">click</button>
+	
+	
 	<script>
-	$('.btn').click(function () {console.log("!!");
- 
- $(".example").each(function(i) {
-   if ((parseInt(i))%2==0 ) 
-	$(this).wrapInner('<span></span>');
-   else $(this).wrapInner('<strong></strong>');
-                                   });
-});    
+	$('.btn').dblclick(function () {
+	
+	$('.btn').text("Двойной клик");
+		$(".example").each(function(i) {
+			if ((parseInt(i))%2==0 ) 
+				$(this).wrapInner('<span></span>');
+			else 
+				$(this).wrapInner('<strong></strong>');
+                        });
+			}); 
+
+	$('.btn').click(function () {
+		$(".example").each(function(i) {
+			if ((parseInt(i))%2==1 ) 
+				$(this).wrapInner('<span></span>');
+			else 
+				$(this).wrapInner('<strong></strong>');
+                        });
+			});    
+			
 	//ready
 	</script>
 </body>

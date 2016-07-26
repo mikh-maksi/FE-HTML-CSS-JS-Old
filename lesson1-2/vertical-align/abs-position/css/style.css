@@ -1,0 +1,8 @@
+#parent {position: relative; height:300px;}
+#child {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 30%;
+	width: 50%;
+}

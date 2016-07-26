@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<style>
+	.d{width:100px;height:100px;border:1px solid;float:left;}
+	.wrapper{width:409px;}
+	</style>
+</head>
+<body>
+	<div class = "wrapper">
+	<div class="d1 d"></div>
+	<div class="d2 d"></div>
+	<div class="d3 d"></div>
+	<div class="d4 d"></div>
+	</div>
+	<button class = "btn">click</button>
+	<script>
+		$('.btn').click(function () {
+			$('.d').each(function(){
+				var h = Math.floor(Math.random()*200);
+				var w = Math.floor(Math.random()*200);
+				$(this).height(h);
+				$(this).width(w);
+				
+			
+			}
+			
+			)
+
+		}
+		);
+	</script>
+</body>
+</html>
