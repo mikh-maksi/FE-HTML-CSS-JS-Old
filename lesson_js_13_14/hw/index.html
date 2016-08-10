@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+  	<style>
+li{
+    border-bottom: 1px dotted #CCCCCC;
+}
+li.odd{
+    background: #FFFFEE;    
+}
+li.even{
+    background: #FFFFCC;
+}
+</style>
+</head>
+<body>
+<script src = "js/tmpl.js"></script>
+<script>
+	var gen = {
+		title: "Тест по программированию",
+		questions: ["Вопрос №1","Вопрос №2","Вопрос №3"],
+		answers : [["Вариант ответа №1","Вариант ответа №2","Вариант ответа №3"],
+		["Вариант ответа №1","Вариант ответа №2","Вариант ответа №3"],
+		["Вариант ответа №1","Вариант ответа №2","Вариант ответа №3","Вариант ответа №4"]],
+		right:[1,1,1],
+		
+		gen_question : function(title){
+			var div = document.createElement('h1');
+				div.innerHTML = title;
+				document.body.appendChild(div);
+				//console.log(this.questions.length);
+		},
+		r : function (){
+			var q = this.questions.length;
+			var answ,ul,li,p,chk, textElem ;
+			
+			for (var i=0;i<q;i++){
+				p = document.createElement('p');
+				p.innerHTML = this.questions[i];
+				document.body.appendChild(p);
+
+				ul = document.createElement('ul');
+				p.appendChild(ul);
+				
+				answ = this.answers[i].length;
+				
+				for (var j=0;j<answ;j++){
+						//console.log(j);
+						li = document.createElement('li');
+						//chk = document.createElement ('input');
+						//	li.innerHTML = this.answers[i][j];
+					//	li.innerHTML = "Вариант ответа №"+Number(i+1);
+						ul.appendChild(li);
+						//li.appendChild(chk);
+						textElem = document.createTextNode(this.answers[i][j]);
+						li.appendChild(textElem);
+			
+				}
+			}
+		}
+	
+	}
+	var str_ls = JSON.stringify(gen);
+	
+	localStorage.setItem("bar", str_ls);
+	str_ls = localStorage.getItem("bar");
+	
+	var gen1 = JSON.parse(str_ls)
+	console.log(gen1);
+	
+	$(function(){
+
+  
+
+  var results = document.getElementById("results");
+  results.innerHTML = tmpl("item_tmpl", gen1);
+
+});
+
+	</script>
+	
+
+
+	<ul id="results">
+	output results here.
+	</ul>
+	
+------------------------------------------------------------
+
+
+<script type="text/html" id="item_tmpl">
+  <% for(var i=0;i<questions.length;i++){%>
+	
+	<li>№<%=i+1%> <%=questions[i]%></li> 
+	<ul>
+  <% for(var j=0;j<answers[i].length;j++){%>
+	
+	<li id =a<%=i%><%=j%>><input type = radio name = a<%=i%> >№<%=j+1%> <%=answers[i][j]%></li> 
+  
+  <% } %>
+  </ul>
+  <% } %>
+</script>
+<br>
+<button id = "send">send</button>
+<script>
+	$(send).click(function(){console.log($(send));
+		if ($("#a00 input:checked").length==1){console.log("ok");}
+		else console.log("no");
+		
+	}
+	);
+</script>
+</body>
+</html>
