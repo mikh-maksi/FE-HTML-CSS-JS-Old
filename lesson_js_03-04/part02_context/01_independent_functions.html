@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+</head>
+<body>
+
+<script>
+
+//В отличие от многих языков, this никак не привязано к объекту, а обозначает просто объект, вызвавший функцию.
+	function a()
+	{
+		var g = 4;
+		console.log(this);
+	}
+
+
+	function b()
+	{
+		a();
+	}
+	
+	a();
+	b();
+	
+</script>
+</body>
+</html>

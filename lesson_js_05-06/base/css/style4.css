@@ -1,0 +1,20 @@
+#play_field {
+
+}
+.line div{
+  float:left;
+  width:100px;
+  height:100px;
+  border: 1px solid;
+}
+div.line{
+  clear:both;
+}
+.x{
+  /*background: green;*/
+  background: url(../img/x.png);
+}
+.o{
+  /*background: blue;*/
+    background: url(../img/o.png);
+}

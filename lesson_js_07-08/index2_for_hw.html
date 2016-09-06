@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	
+
+</head>
+<body>
+	<ul id = "list">
+		<li id ="li1">list item 1</li>
+		<li id ="li2">list item 2</li>
+		<li id ="li3">list item 3</li>
+	</ul>
+	<div class="clear"></div>
+	<div class = "blocks">
+		<div id="b1" class = "block">text 1</div>
+		<div id="b2" class = "block hide">text 2</div>
+		<div id="b3" class = "block hide">text 3</div>
+	</div>
+	
+	<form action="">
+		<p>Simple text:<input type="text" id="inp1"><span id = "h1" class = "hlp hide">help</span></p>
+		<p>Simple text:<input type="text" id="inp2"><span id = "h2" class = "hlp hide">help</span></p>
+		<p>Simple text:<input type="text" id="inp3"><span id = "h3" class = "hlp hide">help</span></p>
+		
+	</form>
+	<button id = "b1">All</button>
+	<script>
+		$(li1).click(function(){ $(b1).removeClass("hide");$(b2).addClass("hide");$(b3).addClass("hide");});
+		$(li2).click(function(){ $(b2).removeClass("hide");$(b1).addClass("hide");$(b3).addClass("hide");
+		/*$(li2).animate({width: "110px",opacity: 0.5}, 2);
+		$(li2).animate({width: "100px",opacity: 1}, 2000);
+		*/
+}); 
+		$(li3).click(function(){ $(b3).removeClass("hide");$(b1).addClass("hide");$(b2).addClass("hide");});
+	 	
+		
+		/*
+		$(li1).click(function(){ $(b1).toggleClass("hide")});
+		$(li2).click(function(){ $(b2).toggleClass("hide")});
+		$(li3).click(function(){ $(b3).toggleClass("hide")});
+		*/
+		$(inp1).mouseover(function(){$(h1).removeClass("hide");});
+		$(inp2).mouseover(function(){$(h2).removeClass("hide");});
+		$(inp3).mouseover(function(){$(h3).removeClass("hide");});
+
+		$(inp1).mouseout(function(){$(h1).addClass("hide");});
+		$(inp2).mouseout(function(){$(h2).addClass("hide");});
+		$(inp3).mouseout(function(){$(h3).addClass("hide");});
+		
+		$(b1).click(function(){$(h1).removeClass("hide");
+	                           $(h2).removeClass("hide");
+	                           $(h3).removeClass("hide");});
+	 
+	 </script>
+</body>
+</body>
+</html>

@@ -1,0 +1,26 @@
+  <script>
+  /*площадь прямоугольника*/
+    function square(a,b)
+    {
+      return a*b;
+    };
+  /*расстояние между точками*/
+    function len(x1,y1,x2,y2)
+    {
+      return Math.sqrt(Math.pow(x1-x2,2)+Math.pow(y1-y2,2));
+    };
+  /*Длина гипотенузы*/
+    function gip (a,b)
+    {
+      return  Math.sqrt(a*a+b*b);
+    }
+	var c;
+	c=square(2,3);
+    console.log("Площадь прямоугольника со сторонами 2 и 3 = "+c);
+
+    c=len(0,0,1,1);
+    console.log("Расстояние между точками (0;0) и (1;1) = "+c);
+
+	c=gip(1366,768);
+    console.log("Дагональ дисплея с шириной 1366 на 768 точек = "+c);
+    </script>

@@ -1,0 +1,24 @@
+#player{
+  position: absolute;
+  top:100px;
+  height:307px;
+  width:272px;
+  background: url(../img/player.png);
+}
+#ball{
+  z-index: 1;
+  position: absolute;
+  top:350px;
+  left:100px;
+  height:52px;
+  width:52px;
+  background: url(../img/ball.png);
+}
+#goal_place{
+  position: absolute;
+  left:700px;
+  top:50px;
+  height:479px;
+  width:639px;
+  background: url(../img/goal_place.png);
+}

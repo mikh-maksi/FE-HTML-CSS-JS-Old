@@ -1,0 +1,42 @@
+<script>
+
+var student = {
+        age: 18,
+        name: 'Ivan',
+        'my second name': 'Pupkin'
+}
+
+var key = 'my second name';
+
+if(key in student){
+        console.log(key);
+} else {
+        console.log('no key');
+}
+
+
+
+//рюйюъ йнмярпсйжхъ я ясыеярбсчыхл йкчвел б назейре бшбндхр AGE IS NOT DEFINED, онвелс? бедэ йкчв AGE еярэ б назейре х хлеер опхябнеммне гмювемхе 18
+var age = 'age';
+
+if (age in student){
+		console.log('+');
+        console.log(age);
+} else {
+        console.log('no age');
+}
+
+
+//онвелс опнундъ жшйкнл FOR он назейрс х ме хлеъ б мел меярюмдюпрмшу хлем мекэгъ напюыюрэяъ й йкчвс вепег рнвйс, онвелс менаундхлн сйюгшбюрэ [ ] йюй б яксвюе я меярюмдюпрмшл хлемел дкъ йкчвю?
+
+var student = {
+        age: 18,
+        name: 'Ivan'
+}
+
+for(var key in student){
+        console.log('key', key);
+        console.log('student.key', student.key);
+        console.log('_____');
+}
+</script>
