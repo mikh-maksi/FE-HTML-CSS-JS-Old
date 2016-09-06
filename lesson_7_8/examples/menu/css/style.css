@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "league_gothicregular";
+    src: url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.eot');
+    src: url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.woff2') format('woff2'),
+         url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.woff') format('woff'),
+         url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.ttf') format('truetype'),
+         url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.svg#league_gothicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "open_sans_lightregular";
+    src: url('../fonts/OpenSansLight/opensanslight-webfont.eot');
+    src: url('../fonts/OpenSansLight/opensanslight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSansLight/opensanslight-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSansLight/opensanslight-webfont.woff') format('woff'),
+         url('../fonts/OpenSansLight/opensanslight-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSansLight/opensanslight-webfont.svg#open_sans_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "open_sans_extraboldregular";
+    src: url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.eot');
+    src: url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.woff') format('woff'),
+         url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.svg#open_sans_extraboldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/*HEADER*/
+
+header {
+	height: 846px;
+	background: url(../images/top_bckgr.jpg) 50% 0 no-repeat;
+}
+
+
+
+.menu {
+	float: right;
+	margin-top: 72px;
+	font-size: 0;
+}
+
+.menu__list__item {
+	display: inline-block;
+	margin-right: 37px;
+}
+
+.menu__list__item:last-child {
+	margin-right: 0;
+}
+
+.menu__list__item__link {
+	display: block;
+	padding: 0 6px 0 7px;
+	color: white;
+	font: 24px "league_gothicregular", Arial, sans-serif;
+	text-decoration: none;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	text-transform: uppercase;
+}
+
+.menu__list__item__link:hover {
+	border-bottom: 2px solid #edbfff;
+}

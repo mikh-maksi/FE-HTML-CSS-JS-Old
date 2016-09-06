@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background:gray;
+}
+ul {
+	list-style-type: none;
+}
+
+.slider-nav {
+	position: absolute;
+	top: 0px;
+	left: 1px;
+}
+
+.slider-nav input {
+	position:absolute;
+	top:-100px;
+	
+}
+
+.slider-nav label {
+	display: inline-block;
+	height: 17px;
+	width: 17px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+
+.slider-nav label:last-child {
+	position: absolute;
+	left: 3px;
+	top: 3px;
+	height: 11px;
+	width: 11px;
+	background: url(../images/sprite.png) -8px -33px no-repeat;
+	transition: all 0.2s ease-in-out;
+}
+
+.slider-nav #slide1:checked~label:last-child {
+	left: 3px;
+}
+
+.slider-nav #slide2:checked~label:last-child {
+	left: 24px;
+}
+
+.slider-nav #slide3:checked~label:last-child {
+	left: 45px;
+}
+
+.slider-nav #slide4:checked~label:last-child {
+	left: 66px;
+}
+
+#send{
+	margin-top:30px;
+}

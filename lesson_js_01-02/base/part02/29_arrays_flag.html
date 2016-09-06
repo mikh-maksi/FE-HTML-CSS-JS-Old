@@ -7,13 +7,13 @@
 	}
 	console.log(a);
 	var max=a[0];
-	
+	var flag = 0;
 	for (var i=0;i<5;i++)
 		{
-			if (max < a[i])
+			if (a[i] % 3 == 0)
 			{
-				max = a[i];
+				flag = 1;
 			}
 		}
-	console.log(max);
+	console.log(flag);
 </script>

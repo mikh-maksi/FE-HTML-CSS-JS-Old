@@ -1,0 +1,94 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'gulp' ]
+2 info using npm@3.8.6
+3 info using node@v6.1.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData gulp
+8 silly fetchNamedPackageData gulp
+9 silly mapToRegistry name gulp
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'gulp',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   name: 'gulp',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/gulp
+14 verbose request uri https://registry.npmjs.org/gulp
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 19:52:40
+17 verbose request id 2fad6d54b3e5423b
+18 verbose etag "AHA9TU4Z4EGVDZFYDBJS315F3"
+19 http request GET https://registry.npmjs.org/gulp
+20 http 304 https://registry.npmjs.org/gulp
+21 verbose headers { date: 'Tue, 06 Sep 2016 16:52:40 GMT',
+21 verbose headers   via: '1.1 varnish',
+21 verbose headers   'cache-control': 'max-age=300',
+21 verbose headers   etag: '"AHA9TU4Z4EGVDZFYDBJS315F3"',
+21 verbose headers   age: '234',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-served-by': 'cache-fra1246-FRA',
+21 verbose headers   'x-cache': 'HIT',
+21 verbose headers   'x-cache-hits': '2',
+21 verbose headers   'x-timer': 'S1473180760.469030,VS0,VE0',
+21 verbose headers   vary: 'Accept-Encoding' }
+22 silly get cb [ 304,
+22 silly get   { date: 'Tue, 06 Sep 2016 16:52:40 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     'cache-control': 'max-age=300',
+22 silly get     etag: '"AHA9TU4Z4EGVDZFYDBJS315F3"',
+22 silly get     age: '234',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-fra1246-FRA',
+22 silly get     'x-cache': 'HIT',
+22 silly get     'x-cache-hits': '2',
+22 silly get     'x-timer': 'S1473180760.469030,VS0,VE0',
+22 silly get     vary: 'Accept-Encoding' } ]
+23 verbose etag https://registry.npmjs.org/gulp from cache
+24 verbose get saving gulp to C:\Users\max\AppData\Roaming\npm-cache\registry.npmjs.org\gulp\.cache.json
+25 verbose correctMkdir C:\Users\max\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+26 silly install normalizeTree
+27 silly loadCurrentTree Finishing
+28 silly loadIdealTree Starting
+29 silly install loadIdealTree
+30 silly cloneCurrentTree Starting
+31 silly install cloneCurrentTreeToIdealTree
+32 silly cloneCurrentTree Finishing
+33 silly loadShrinkwrap Starting
+34 silly install loadShrinkwrap
+35 silly loadShrinkwrap Finishing
+36 silly loadAllDepsIntoIdealTree Starting
+37 silly install loadAllDepsIntoIdealTree
+38 silly rollbackFailedOptional Starting
+39 silly rollbackFailedOptional Finishing
+40 silly runTopLevelLifecycles Starting
+41 silly runTopLevelLifecycles Finishing
+42 silly install printInstalled
+43 verbose stack Error: Refusing to install gulp as a dependency of itself
+43 verbose stack     at checkSelf (C:\Program Files\nodejs\node_modules\npm\lib\install\validate-args.js:53:14)
+43 verbose stack     at Array.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+43 verbose stack     at LOOP (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:15:14)
+43 verbose stack     at chain (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:20:5)
+43 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install\validate-args.js:16:5
+43 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:35
+43 verbose stack     at Array.forEach (native)
+43 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:11
+43 verbose stack     at Array.forEach (native)
+43 verbose stack     at asyncMap (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:51:8)
+44 verbose cwd D:\tmp\goit\goit_git\tasks\lesson_9\gulp
+45 error Windows_NT 6.1.7601
+46 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "gulp"
+47 error node v6.1.0
+48 error npm  v3.8.6
+49 error code ENOSELF
+50 error Refusing to install gulp as a dependency of itself
+51 error If you need help, you may report this error at:
+51 error     <https://github.com/npm/npm/issues>
+52 verbose exit [ 1, true ]

@@ -1,0 +1,127 @@
+@font-face {
+    font-family: "league_gothicregular";
+    src: url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.eot');
+    src: url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.woff2') format('woff2'),
+         url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.woff') format('woff'),
+         url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.ttf') format('truetype'),
+         url('../fonts/leaguegothic/leaguegothiccyrillic-webfont.svg#league_gothicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "open_sans_lightregular";
+    src: url('../fonts/OpenSansLight/opensanslight-webfont.eot');
+    src: url('../fonts/OpenSansLight/opensanslight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSansLight/opensanslight-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSansLight/opensanslight-webfont.woff') format('woff'),
+         url('../fonts/OpenSansLight/opensanslight-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSansLight/opensanslight-webfont.svg#open_sans_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "open_sans_extraboldregular";
+    src: url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.eot');
+    src: url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.woff') format('woff'),
+         url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSansExtraBold/opensansextrabold-webfont.svg#open_sans_extraboldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+.brands {
+	padding-top: 24px;
+	padding-bottom: 28px;
+	font-size: 0;
+}
+
+.brands a {
+	display: inline-block;
+	height: 65px;
+	background: url(../images/brands.png) no-repeat;
+}
+
+.brands a:first-child {
+	width: 69px;
+	margin: 0 6.5% 0 10%;
+}
+
+.brands a:first-child:hover{
+	background-position: 0 -66px;
+}
+
+.brands a:nth-child(2) {
+	width: 72px;
+	margin-right: 7%;
+	background-position: -134px 0;
+}
+
+.brands a:nth-child(2):hover{
+	background-position: -134px -66px;
+}
+
+.brands a:nth-child(3) {
+	width: 65px;
+	margin-right: 8%;
+	background-position: -270px 0;
+}
+
+.brands a:nth-child(3):hover{
+	background-position: -270px -66px;
+}
+
+.brands a:nth-child(4) {
+	width: 50px;
+	margin: 1px 7% 0 0;
+	background-position: -410px 0;
+}
+
+.brands a:nth-child(4):hover{
+	background-position: -410px -66px;
+}
+
+.brands a:nth-child(5) {
+	height: 21px;
+	width: 103px;
+	margin: 0px 7% 24px 0;
+	background-position: -528px -22px;
+}
+
+.brands a:nth-child(5):hover{
+	background-position: -528px -88px;
+}
+
+.brands a:last-child {
+	width: 78px;
+	height: 61px;
+	margin-bottom: 4px;
+	background-position: -697px -2px;
+}
+
+.brands a:last-child:hover{
+	background-position: -697px -68px;
+}

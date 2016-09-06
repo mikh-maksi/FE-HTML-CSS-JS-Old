@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var menu = {
+	  width: 300,
+	  height: 200,
+	  title: "Menu",
+	  arr: ["a", 1, true]
+	};
+console.log(menu);
+
+function is_array( mixed_var ) {	// Finds whether a variable is an array
+	return ( mixed_var instanceof Array );
+}
+
+
+
+for (var key in menu) {
+  // этот код будет вызван для каждого свойства объекта
+  // ..и выведет имя свойства и его значение
+ console.log( "Ключ: " + key + " значение: " + menu[key] );
+ if (is_array(menu[key])){
+	arr = menu[key];
+	for (var key1 in arr) 
+	{ console.log( "->Ключ: " + key1 + " значение: " + arr[key1] );
+
+	}
+ }
+}
+	
+	
+	</script>
+</body>
+</html>

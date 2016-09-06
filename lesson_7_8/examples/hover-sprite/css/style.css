@@ -1,0 +1,30 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.phone {
+	position: absolute;
+	top: -17px;
+	right: 71px;
+	width: 197px;
+	height: 434px;
+	background: url(../images/iphone_front.png) no-repeat;
+}
+
+.phone .play {
+	display: block;
+	position: absolute;
+	top: 149px;
+	left: 61px;
+	height: 76px;
+	width: 76px;
+	background: url(../images/sprite.png) -16px -61px no-repeat;
+}
+
+.phone .play:hover {
+	background-position: -272px 0;
+}

@@ -1,0 +1,19 @@
+{
+{
+  "name": "gulp",
+  "version": "1.0.0",
+  "description": "gulp_example",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tasks"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "newlevelcenter",
+  "license": "ISC"
+}
