@@ -1,0 +1,23 @@
+{
+  "name": "max",
+  "version": "1.0.0",
+  "description": "unit-tests",
+  "main": "indeh.html",
+  "scripts": {
+    "test": "max"
+  },
+  "repository": {
+    "type": "git",
+    "url": "newlevelcenter"
+  },
+  "keywords": [
+    "max"
+  ],
+  "author": "max",
+  "license": "ISC",
+  "dependencies": {
+    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.7"
+  },
+  "devDependencies": {}
+}
