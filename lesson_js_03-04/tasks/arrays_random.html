@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = [1,6,3,6,2];
+    for (var i=0;i<5;i++)
+    {
+      a[i]=Math.floor(Math.random()*10);
+    }
+    //
+    for (var i=0;i<5;i++)
+    {
+      document.write(a[i]+' ');
+    }
+    //max
+    var max = a[0];
+    for (var i=1;i<5;i++)
+    {
+      if (max<a[i]){
+        max = a[i];
+      }
+    }
+      document.write('max: '+max+'<br>');
+    //max i
+    max = a[0];
+    var n = 0;
+    for (var i=1;i<5;i++)
+    {
+      if (max<a[i]){
+        max = a[i];
+        n=i;
+      }
+    }
+      document.write('max: '+max+' on '+n+' place<br>');
+    //sort
+    var k;
+    for (var j =0;j<5;j++)
+    {
+    max = a[j];
+    n = j;
+    for (var i=j+1;i<5;i++)
+    {
+      if (max<a[i]){
+        max = a[i];
+        n=i;
+      }
+    }
+    k = a[j];
+    a[j]=a[n];
+    a[n]=k;
+  }
+  for (var i=0;i<5;i++)
+  {
+    document.write(a[i]+' ');
+  }
+
+  </script>
+</body>
+</html>

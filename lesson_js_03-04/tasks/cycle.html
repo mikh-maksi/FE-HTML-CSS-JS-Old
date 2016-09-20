@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = {firstname:'Mikhail',lastname:'Maksimov',
+    doit:function(){
+      var b = document.body;
+      var c = document.createElement('input');
+      b.appendChild(c);
+    },
+    createit:function(){
+      var b = document.body;
+      var c = document.createElement('input');
+      c.setAttribute('type', 'checkbox');
+      var d;
+      for (var i=0;i<5;i++){
+        d = c.cloneNode(true);
+        d.setAttribute('name', 'c'+i);
+        b.appendChild(d);
+      }
+    }
+
+    }
+    console.log(a);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function add(){
+      var b = document.body;
+      var c = document.createElement('input');
+      c.setAttribute('type', 'checkbox');
+      b.appendChild(c);
+      for (var i=0;i<5;i++){
+        d = c.cloneNode(true);
+        d.setAttribute('id', 'ch'+i);
+        b.appendChild(d);
+      }
+
+    }
+    add();
+  </script>
+</body>
+</html>

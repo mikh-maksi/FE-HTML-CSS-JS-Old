@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = [1,6,3,6,2,43,4];
+    for (var i=0;i<a.length;i++)
+    {
+      document.write(a[i]+' ');
+    }
+    //max
+    var max = a[0];
+    for (var i=1;i<a.length;i++)
+    {
+      if (max<a[i]){
+        max = a[i];
+      }
+    }
+      document.write('max: '+max+'<br>');
+    //max i
+    max = a[0];
+    var n = 0;
+    for (var i=1;i<a.length;i++)
+    {
+      if (max<a[i]){
+        max = a[i];
+        n=i;
+      }
+    }
+      document.write('max: '+max+' on '+n+' place<br>');
+    //sort
+    var c=5;
+    var b=6;
+    var t;
+    t=c;
+    c=b;
+    b=t;
+    console.log(c+' '+b);
+
+    var k;
+    for (var j=0;j<a.length;j++)
+    {
+    max = a[j];
+    n = j;
+    for (var i=j+1;i<a.length;i++)
+    {
+      if (max<a[i]){
+        max = a[i];
+        n=i;
+      }
+    }
+    k = a[j];
+    a[j]=a[n];
+    a[n]=k;
+  }
+  for (var i=0;i<a.length;i++)
+  {
+    document.write(a[i]+' ');
+  }
+
+  </script>
+</body>
+</html>
