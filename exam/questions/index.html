@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<script>
+	RandomWord();
+		 function RandomWord() {
+        var requestStr = "http://randomword.setgetgo.com/get.php";
+
+        $.ajax({
+            type: "GET",
+            url: requestStr,
+            dataType: "jsonp",
+            jsonpCallback: 'RandomWordComplete'
+        });
+    }
+
+    function RandomWordComplete(data) {
+        alert(data.Word);
+    }
+    
+	</script>
+</body>
+</html>

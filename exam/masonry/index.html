@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href = "css/main.css" rel = "stylesheet">
+	<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+</head>
+<body>
+<input id = "search">
+<button id = "go">Загрузить</button>
+<button id="clear">Очистить</button>
+<div id="example_j">
+
+<p></p>
+</div>
+
+<div >
+
+<p></p>
+</div>
+
+<script>
+	$("#go").click(function(){
+	var txt = $("#search").val();
+	console.log(txt);
+	var ok = $.getJSON("https://pixabay.com/api/?key=3118779-be29778b1b1db18e334fc6de3&q="+txt+"&image_type=photo",
+		function(data){
+		$.each(data.hits, function(i,item){
+						console.log(item);
+					 $("<div>").attr("class", "grid-item grid-item--width2 grid-item--height2").attr("style", "width:"+item.previewWidth+"px;height:"+item.previewHeight+"px;").attr("id", "div"+i).appendTo("#gr");;
+					 $("<img/>").attr("src", item.previewURL).appendTo("#div"+i);
+          });previewHeight
+
+        });
+
+
+	      ok.complete(function() {
+					$('.grid').masonry({
+						// options...
+						itemSelector: '.grid-item',
+						columnWidth: 200
+					});
+ 				});
+		   });
+
+	$("#clear").click(function(){
+
+		$("#gr").empty();
+
+	});
+</script>
+
+
+
+<div class="grid" id = "gr">
+	<div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item grid-item--height3"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2 grid-item--height3"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+</div>
+	<script>
+
+</script>
+</body>
+</html>

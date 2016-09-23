@@ -1,0 +1,21 @@
+{
+  "name": "masonry",
+  "version": "1.0.0",
+  "description": "mansory experiments",
+  "main": "index.html",
+  "scripts": {
+    "test": "masonry"
+  },
+  "repository": {
+    "type": "git",
+    "url": "masonry"
+  },
+  "keywords": [
+    "masonry"
+  ],
+  "author": "max",
+  "license": "ISC",
+  "dependencies": {
+    "masonry-layout": "^4.1.1"
+  }
+}
