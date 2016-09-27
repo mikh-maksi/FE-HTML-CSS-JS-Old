@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.d{
+		width:100px;
+		height:30px;
+		text-align:center;
+		}
+		.d button{
+		width:50px;
+		}
+		.l2 button{
+		float:left;}
+		#ball{
+			width:50px;
+			height:50px;
+			background: url('img/ball.png');
+			position:absolute;
+			top:100px;
+			left:10px;
+		}
+	</style>
+</head>
+<body>
+	<div class = "l1 d"><button id="up">up</button></div>
+	<div class = "l2 d"><button id="left">left</button><button id="right">right</button></div>
+	<div class = "l3 d"><button id="down">down</button></div>
+  <div id = "ball"></div>
+  <div id = "for_count"></div>
+	<script>
+		/*
+			1. Кнопки.
+			2. Счетчик - запуск в работу.
+			3. Остановка, перезапуск.
+			4. Рост по шагам - рост секунд по минутам и часам.
+			5. Задание:
+			а. Появление элемента в случайной точке.
+			b. "Ездилка" - элемент двигается по кнопкам.
+			c. "Перелет" - нажимается кнопка и элемент проезжает определенную длину.
+		*/
+		left.addEventListener("click",left);
+		right.addEventListener("click",right_cl);
+		up.addEventListener("click",up);
+		down.addEventListener("click",down);
+
+	var obj={
+	  s: "start",
+	  p: "pause",
+	  st: "stop"
+	}
+
+	var count=0, timerId, go=false;
+	function right_cl(){
+	var a = getComputedStyle(ball);
+		console.log(a.left);
+	var left = parseInt(a.left)	;
+		console.log(left);
+		//left+=100;
+		console.log(left);
+		ball.style.left = left+"px";
+
+		timerId = setInterval(function() {
+		a = getComputedStyle(ball);
+		console.log(a.left);
+		left = parseInt(a.left)	;
+		console.log(left);
+		left+=1;
+		console.log(left);
+		ball.style.left = left+"px";
+		count++;
+		}, 1); 
+	}
+	function pause_click(){
+	  clearInterval(timerId);
+	  go=false;
+	  for_text.innerHTML="pause_click";
+	}
+
+	function stp_click(){
+	  clearInterval(timerId);
+	  go=false;
+	  count = 0;
+	  for_count.innerHTML=count;
+	  for_text.innerHTML="stp_click";
+	}
+
+	</script>
+ 
+
+</body>
+</html>
