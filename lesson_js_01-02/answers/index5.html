@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>функция</title>
+  </head>
+  <body>
+    <script>
+        var x = prompt('please, enter value for "x"');
+        var n = parseInt(prompt('please, enter value for "n"'));
+		console.log(x+' '+n);
+		
+		function pow (x,n){
+			var res=1;
+			if (n>0){
+				for (var i = 0; i<n;i++){
+					res *= x;
+				}
+				}
+			if (n<0){
+				for (var i = 0; i<-n;i++){
+					res *= x;
+				}
+				res = 1/res;
+			}
+			return res;
+		
+		}
+		console.log(pow(x,n));
+		
+        
+    </script>
+  </body>
+</html>
+</body>
+</html>
