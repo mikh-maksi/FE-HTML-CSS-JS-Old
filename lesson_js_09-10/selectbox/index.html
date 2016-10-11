@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>jQuery custom selectboxes</title>
+		  <link rel="stylesheet" type="text/css" media="all" href="css/default.css" />
+		  <link rel="stylesheet" type="text/css" media="all" href="css/jquery.selectbox.css" />
+		  <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+		  <script type="text/javascript" src="js/jquery.selectbox-0.6.1.js"></script>
+    </head>
+    <body>
+    	<div id="wraper">
+	    		
+	    	<h1>jQuery custom selectboxes</h1>
+			<h3>current version: <code>0.6.1</code></h3>
+			<dl>
+				<dt>Demonstration:</dt>
+				<dd id="demo-default-usage">
+					<div class="demoTarget">
+						<select id="default-usage-select">
+							<option value="--">Please select your favorite color</option>
+							<option value="01">Red</option>
+							<option value="02">Orange</option>
+							<option value="03">Yellow</option>
+							<option value="04">Green</option>
+							<option value="05">Blue</option>
+							<option value="06">Magenta</option>
+							<option value="07">Violet</option>
+							<option value="08">Ultra-violet</option>
+						</select>
+						<div class="clr"></div>
+					</div>
+					<div class="demoControls">
+						<span>Controls</span><br />
+						<button class="replace">Replace</button>
+						<button class="undo">Undo</button>
+					</div>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						$("#demo-default-usage .demoControls").find('.replace').bind('click', function(){
+							$("#default-usage-select").selectbox();
+						});
+						$("#demo-default-usage .demoControls").find('.undo').bind('click', function(){
+							$("#default-usage-select").parents('.jquery-selectbox').unselectbox();
+						});
+					//]]>
+					</script>
+					
+		<script type="text/javascript">
+		//<![CDATA[
+			$("#default-usage-select").selectbox().bind('change', function(){
+				$('<div>Value of #default-usage-select changed to: '+$(this).val()+'</div>').appendTo('#demo-default-usage .demoTarget').fadeOut(5000, function(){
+					$(this).remove();
+				});
+			});
+		//]]>
+		</script>
+    </body>
+</html>

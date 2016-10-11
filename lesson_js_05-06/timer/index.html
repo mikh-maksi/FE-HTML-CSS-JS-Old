@@ -7,9 +7,20 @@
 <body>
 	<script>
 		var data = new Date();
+		var msec
+		//var msec = data.getMiliseconds();
 		var sec = data.getSeconds();
 		var min = data.getMinutes();
-		document.write(min+' '+sec);
+		document.write(min+' '+sec+' '+msec);
+		var start = Date.now();
+		// ... измеряемый код...
+		alert('test');
+		// ... конец измеряемого кода...
+
+		var stop = Date.now();
+		var diff = stop – start; // время в миллисекундах
+		document.write(diff);
+		
 	</script>
 </body>
 </html>

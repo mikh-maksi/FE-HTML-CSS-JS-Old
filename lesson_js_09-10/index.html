@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic carousel - jCarousel Examples</title>
+
+        <!-- Shared assets -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Example assets -->
+        <link rel="stylesheet" type="text/css" href="css/jcarousel.basic.css">
+		
+		<!-- Select -->
+		<link rel="stylesheet" type="text/css" media="all" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/jquery.selectbox.css" />
+		<!-- Checkbox -->
+		<link rel="stylesheet" type="text/css" media="all" href="css/check.css" />
+
+		<!-- Coourusel -->
+        <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+        <script type="text/javascript" src="dist/jquery.jcarousel.min.js"></script>
+        <script type="text/javascript" src="js/jcarousel.basic.js"></script>
+		
+		<!-- Select -->
+		<script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+		<script type="text/javascript" src="js/jquery.selectbox-0.6.1.js"></script>
+
+		<style type="text/css">
+<!--
+form {
+	margin: 50px;
+	
+	padding: 10px;
+}
+.niceCheck {
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	cursor: pointer;
+	background: url(img/checkbox.png);
+	overflow: hidden;
+}
+.niceChecked {
+	background-position: 0 -17px;
+}
+.niceCheck input {
+	margin-left: -100px;
+}
+div {
+	margin-bottom: 10px;
+}
+.niceCheckDisabled {
+	background-image: url(img/checkbox-disabled.png);
+}
+		
+-->
+</style>
+		<script type="text/javascript">
+jQuery(document).ready(function(){
+
+jQuery(".niceCheck").each(
+/* при загрузке страницы меняем обычные на стильные checkbox */
+function() {
+     
+     changeCheckStart(jQuery(this));
+     
+});
+
+                                        });
+
+
+function changeCheck(el)
+/* 
+	функция смены вида и значения чекбокса при клике на контейнер чекбокса (тот, котрый отвечает за новый вид)
+	el - span контейнер для обычного чекбокса
+	input - чекбокс
+*/
+{
+
+	var el = el,
+		input = el.find("input").eq(0);
+		  
+	if(el.attr("class").indexOf("niceCheckDisabled")==-1)
+	{	
+   		if(!input.attr("checked")) {
+			el.addClass("niceChecked");
+			input.attr("checked", true);
+		} else {
+			el.removeClass("niceChecked");
+			input.attr("checked", false).focus();
+		}
+	}
+	
+    return true;
+}
+
+function changeVisualCheck(input)
+{
+/*
+	меняем вид чекбокса при смене значения
+*/
+var wrapInput = input.parent();
+	if(!input.attr("checked")) {
+		wrapInput.removeClass("niceChecked");
+	}
+	else
+	{
+		wrapInput.addClass("niceChecked");
+	}
+}
+
+function changeCheckStart(el)
+/* 
+	новый чекбокс выглядит так <span class="niceCheck"><input type="checkbox" name="[name check]" id="[id check]" [checked="checked"] /></span>
+	новый чекбокс получает теже name, id и другие атрибуты что и были у обычного
+*/
+{
+
+try
+{
+var el = el,
+	checkName = el.attr("name"),
+	checkId = el.attr("id"),
+	checkChecked = el.attr("checked"),
+	checkDisabled = el.attr("disabled"),
+	checkValue = el.attr("value");
+	checkTab = el.attr("tabindex");
+	if(checkChecked)
+		el.after("<span class='niceCheck niceChecked'>"+
+			"<input type='checkbox'"+
+			"name='"+checkName+"'"+
+			"id='"+checkId+"'"+
+			"checked='"+checkChecked+"'"+
+			"value='"+checkValue+"'"+
+			"tabindex='"+checkTab+"' /></span>");
+	else
+		el.after("<span class='niceCheck'>"+
+			"<input type='checkbox'"+
+			"name='"+checkName+"'"+
+			"id='"+checkId+"'"+
+			"value='"+checkValue+"'"+
+			"tabindex='"+checkTab+"' /></span>");
+	
+	/* если checkbox disabled - добавляем соотвсмтвующи класс для нужного вида и добавляем атрибут disabled для вложенного chekcbox */		
+	if(checkDisabled)
+	{
+		el.next().addClass("niceCheckDisabled");
+		el.next().find("input").eq(0).attr("disabled","disabled");
+	}
+	
+	/* цепляем обработчики стилизированным checkbox */		
+	el.next().bind("mousedown", function(e) { changeCheck(jQuery(this)) });
+	el.next().find("input").eq(0).bind("change", function(e) { changeVisualCheck(jQuery(this)) });
+	if(jQuery.browser.msie)
+	{
+		el.next().find("input").eq(0).bind("click", function(e) { changeVisualCheck(jQuery(this)) });	
+	}
+	el.remove();
+}
+catch(e)
+{
+	// если ошибка, ничего не делаем
+}
+
+    return true;
+}
+
+</script>
+		
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <h1>Basic carousel</h1>
+
+            <p>This example shows how to setup a basic carousel with prev/next controls and pagination.</p>
+
+            <div class="jcarousel-wrapper">
+                <div class="jcarousel">
+                    <ul>
+                        <li><img src="img/img1.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img2.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img3.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img4.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img5.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img6.jpg" width="600" height="400" alt=""></li>
+                    </ul>
+                </div>
+
+                <p class="photo-credits">
+                    Photos by <a href="http://www.mw-fotografie.de">Marc Wiegelmann</a>
+                </p>
+
+                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                
+                <p class="jcarousel-pagination">
+                    
+                </p>
+            </div>
+        </div>
+		<div class = "clear"></div>
+		<div class="demoTarget">
+			<select id="default-usage-select">
+				<option value="--">Please select your favorite color</option>
+				<option value="01">Red</option>
+				<option value="02">Orange</option>
+				<option value="03">Yellow</option>
+				<option value="04">Green</option>
+				<option value="05">Blue</option>
+				<option value="06">Magenta</option>
+				<option value="07">Violet</option>
+				<option value="08">Ultra-violet</option>
+			</select>
+			<div class="clr"></div>
+		</div>
+		<dd id="demo-default-usage">
+			<div class="demoControls">
+				<span>Controls</span><br />
+				<button class="replace">Replace</button>
+				<button class="undo">Undo</button>
+			</div>
+		</dd>
+		<div class="clear"></div>
+		<form action="#">
+			<div><label for="ch1">label 1</label><span class="niceCheck niceChecked"><input type="checkbox" name="" id="ch1" value="on" tabindex="1"></span> </div>
+			<div><label for="ch2">label 2</label><span class="niceCheck niceChecked"><input type="checkbox" name="" id="ch2" checked="true" value="2" tabindex="2"></span></div>
+			<div><label for="ch3">label 3</label><span class="niceCheck niceChecked niceCheckDisabled"><input type="checkbox" name="" id="ch3" checked="true" value="on" tabindex="0" disabled=""></span></div>
+		</form>
+		<div class="clear"></div>
+		
+		<div class="chckb">
+			<input type="checkbox" id="test-check1">
+			<label for="test-check1">Чекбокс 1:</label>
+		</div>
+		<ul>
+			<li id="id-1"></li>
+			<li id="id-2"></li>
+			<li id="id-3"></li>
+		</ul>
+		<script>
+			$("#id-2").siblings().css("background-color", "green");
+		</script>
+		<script type="text/javascript">
+		//<![CDATA[
+		$("#demo-default-usage .demoControls").find('.replace').bind('click', function(){
+		$("#default-usage-select").selectbox();
+		});
+		$("#demo-default-usage .demoControls").find('.undo').bind('click', function(){
+		$("#default-usage-select").parents('.jquery-selectbox').unselectbox();
+		});
+		//]]>
+		</script>
+		<script type="text/javascript">
+		//<![CDATA[
+			$("#default-usage-select").selectbox().bind('change', function(){
+				$('<div>Value of #default-usage-select changed to: '+$(this).val()+'</div>').appendTo('#demo-default-usage .demoTarget').fadeOut(5000, function(){
+					$(this).remove();
+				});
+			});
+		//]]>
+		</script>
+		
+		
+    </body>
+</html>

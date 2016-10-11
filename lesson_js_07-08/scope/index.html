@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function makeCounter() {
+		var currentCount = 1;
+		return function() {
+		return currentCount++;
+	};}
+
+	var counter = makeCounter();
+	var counter2 = makeCounter();
+
+	alert( counter() ); // 1
+	alert( counter() ); // 2
+	alert( counter() ); // 3
+
+	alert( counter2() ); // 1, счётчики независимы
+	</script>
+</body>
+</html>

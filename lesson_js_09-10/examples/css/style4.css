@@ -1,0 +1,66 @@
+#play_field {
+
+}
+.line div{
+  float:left;
+  width:100px;
+  height:100px;
+  border: 1px solid;
+}
+div.line{
+  clear:both;
+}
+.x{
+  /*background: green;*/
+  background: url(../img/x.png);
+}
+.o{
+  /*background: blue;*/
+    background: url(../img/o.png);
+}
+#up1{
+	position:absolute;
+	top:8px;
+}
+#up1 .line div{
+  position:absolute;
+  float:left;
+  left:0px;
+  width:100px;
+  height:100px;
+  border: 1px solid;
+  background:gray;
+}
+#up1 .line div.cell_01{
+	left:0px;
+}
+#up1 .line div.cell_02{
+	left:102px;
+}
+#up1 .line div.cell_03{
+	left:204px;
+}
+#up1 .line div.cell_10{
+	top:0px;
+}
+#up1 .line div.cell_20{
+	top:102px;
+}
+#up1 .line div.cell_30{
+	top:204px;
+}
+
+#up1 .line div.place_x{
+	left:400px;
+	top:50px;
+	transition-property: left top;
+	transition-duration: 1s;
+	transition-timing-function:cubic-bezier(.87,1.88,0,1.81);
+}
+/*#up1 .line div.place_y{
+	top:0px;
+	transition-property: left;
+	transition-duration: 1s;
+	transition-timing-function:cubic-bezier(.87,1.88,0,1.81);
+}*/
+

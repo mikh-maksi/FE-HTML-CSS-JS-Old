@@ -1,0 +1,12 @@
+.kub {
+  position: absolute;
+  background-color: gray;
+  width: 100px;
+  height: 100px;
+  left:0px;
+  transition: all 3s;
+}
+
+.go {
+  left: 100px;
+}

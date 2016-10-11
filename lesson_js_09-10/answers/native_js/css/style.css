@@ -1,0 +1,35 @@
+*{
+	margin:0;
+	padding:0;
+}
+.block{
+	width:304px;
+	height:150px;
+	border:1px solid;
+	border-radius:5px;
+}
+.hide{
+	display:none;
+}
+#list li{
+	width:100px;
+	height:30px;
+	border-radius:5px;
+	float:left;
+	list-style-type:none;
+	border:1px solid;
+	text-align:center;
+	cursor:pointer;
+}
+.clear{
+	clear:both;
+}
+.hlp{
+	
+}
+.act{
+	background:#DDD;
+	transition-property: background-color;
+	transition-duration: 0.5s;
+	transition-timing-function:cubic-bezier(.87,1.88,0,1.81);
+}

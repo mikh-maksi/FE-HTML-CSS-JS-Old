@@ -7,9 +7,9 @@ function start_click(){
   for_text.innerHTML="start_click";
   if (go==0){
   timerId = setInterval(function() {
-  count++;
+  count+=5;
   for_count.innerHTML=count;
-  }, 1);
+  }, 5);
   go=1;
 }
 }

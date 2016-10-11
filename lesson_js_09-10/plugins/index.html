@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic carousel - jCarousel Examples</title>
+
+        <!-- Shared assets -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Example assets -->
+        <link rel="stylesheet" type="text/css" href="css/jcarousel.basic.css">
+		
+		<!-- SELECT-->
+		<link rel="stylesheet" type="text/css" media="all" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/jquery.selectbox.css" />
+
+		
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+
+        <script type="text/javascript" src="js/jcarousel.basic.js"></script>
+		
+		<!-- SELECT-->
+		<script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+		<script type="text/javascript" src="js/jquery.selectbox-0.6.1.js"></script>
+		
+		
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <h1>Basic carousel</h1>
+
+            <p>This example shows how to setup a basic carousel with prev/next controls and pagination.</p>
+
+            <div class="jcarousel-wrapper">
+                <div class="jcarousel">
+                    <ul>
+                        <li><img src="img/img1.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img2.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img3.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img4.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img5.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="img/img6.jpg" width="600" height="400" alt=""></li>
+                    </ul>
+                </div>
+
+                <p class="photo-credits">
+                    Photos by <a href="http://www.mw-fotografie.de">Marc Wiegelmann</a>
+                </p>
+
+                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                
+                <p class="jcarousel-pagination">
+                    
+                </p>
+            </div>
+        </div>
+		<div class="clear"></div>
+						<dd id="demo-default-usage">
+					<div class="demoTarget">
+						<select id="default-usage-select">
+							<option value="--">Please select your favorite color</option>
+							<option value="01">Red</option>
+							<option value="02">Orange</option>
+							<option value="03">Yellow</option>
+							<option value="04">Green</option>
+							<option value="05">Blue</option>
+							<option value="06">Magenta</option>
+							<option value="07">Violet</option>
+							<option value="08">Ultra-violet</option>
+						</select>
+						<div class="clr"></div>
+					</div>
+					<div class="demoControls">
+						<span>Controls</span><br />
+						<button class="replace">Replace</button>
+						<button class="undo">Undo</button>
+					</div>
+					<p class="desc">
+						This is the simpliest way to get custom selectbox working. The
+						replace method <code>.selectbox()</code> is being run without 
+						parameters. Only thing to get this running is to attach 
+						required javascript and css files into document.
+					</p>
+					<div class="code">
+						<span>Code for replace</span>
+						<pre>$("#default-usage-select").selectbox();</pre>
+						<span>Code for undo</span>
+						<pre>$("#default-usage-select").parents('.jquery-selectbox').unselectbox();</pre>
+					</div>
+					<script type="text/javascript">
+					//<![CDATA[
+						$("#demo-default-usage .demoControls").find('.replace').bind('click', function(){
+							$("#default-usage-select").selectbox();
+						});
+						$("#demo-default-usage .demoControls").find('.undo').bind('click', function(){
+							$("#default-usage-select").parents('.jquery-selectbox').unselectbox();
+						});
+					//]]>
+					</script>
+					<div>More option can be found in source-code.</div>
+				</dd>
+				<script type="text/javascript">
+		//<![CDATA[
+			$("#default-usage-select").selectbox().bind('change', function(){
+				$('<div>Value of #default-usage-select changed to: '+$(this).val()+'</div>').appendTo('#demo-default-usage .demoTarget').fadeOut(5000, function(){
+					$(this).remove();
+				});
+			});
+		//]]>
+		</script>
+    </body>
+</html>
