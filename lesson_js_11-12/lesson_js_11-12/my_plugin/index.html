@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  .d{
+    width:100px;
+    height:30px;
+    background-color: gray;
+    border:1px solid black;
+  }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="js/mymlugin.js"></script>
+</head>
+<body>
+  <div class="d">1</div>
+  <div class="d">2</div>
+  <div class="d">3</div>
+  <div class="d">4</div>
+  <p class="k">1</p>
+  <p class="k">2</p>
+  <p class="k">3</p>
+  <p class="k">4</p>
+  <p id="n"></div>
+  <form>
+    <input type="text" id="d1">
+    <input type="text" id="d2">
+    <input type="text" id="d3">
+  </form>
+  <button id="b">go</button>
+  <script>
+  $(document).ready(function () {
+  var n = $(".d:even").length;
+  console.log(n);
+  $("#n").html(n);
+  $(".d:even").each(function(i){
+    $(this).css("color", "red");
+  }
+);
+  $(".d:odd").each(function(i){
+    $(this).css("color", "blue");
+  }
+);
+$(".d:odd").click(function(){
+$(this).css("background-color", "red");
+});
+
+$(".d:even").click(function(){
+$(this).css("background-color", "blue");
+});
+
+$(".d").mouseout(function(){
+$(this).css("background-color", "red");
+});
+$(".d").mouseover(function(){
+$(this).css("background-color", "yellow");
+});
+$(".d").bind("dblclick", function() {
+  $(this).css("background-color", "green");
+  return false; });
+});
+$("#b").click(function(){
+  var v = $("#d1").val()
+  console.log(v);
+  $("#d2").val(v);
+}
+
+
+
+);
+
+   // конец плагина
+
+// теперь мы  можем использовать наш плагин
+$(".k").myplugin();
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#example_j{border:solid 1px #999; margin:5px; padding:10px}
+	</style>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+	</head>
+
+<body>
+<div id="example_j">
+<button>Загрузить</button>
+<p></p>
+</div>
+<script>
+	$("#example_j button").click(function(){
+$.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",function(data){
+          $.each(data, function(i,item){
+          console.log(item.ccy);
+		  
+          });
+        });
+             });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+.carousel-hider {
+    width: 585px;
+    overflow: hidden;
+    float: left;
+}
+
+.carousel-list {
+    list-style: none;
+    width: 10000px;
+    padding: 0px;
+    position: relative;
+}
+
+.carousel-element {
+    display: block;
+    margin-right: 25px;
+    float: left;
+}
+
+.carousel-element img {
+    width: 585px;
+}
+
+.carousel-arrow-left, .carousel-arrow-right {
+    float: left;
+    display: block;
+    border: 1px solid grey;
+    background-color: lightgrey;
+    padding: 5px;
+    margin-top: 50px;
+}
+
+.carousel-arrow-left:hover, .carousel-arrow-right:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+.carousel-arrow-left {
+    margin-right: 25px;
+}
+
+.carousel-arrow-right {
+    margin-left: 25px;
+}
+.navi
+{
+      list-style: none;
+}
+.navi li
+{
+      float:left;
+}
+.msyst_it_slider_wpapper
+{
+  width:100%;
+  text-align: center;
+  padding:0 auto;
+}
+.msyst_it_slider_wpapper_in, .wrapper_navi
+{
+  width:550px;
+  text-align: center;
+  margin:0 auto;
+}
+ul.navi
+{
+  display:inline-block;
+}
+.carousel-arrow-right, .carousel-arrow-left
+{display:none;}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<style>
+	.ball{
+		width:1000px;
+		height:1000px;
+		
+	}
+	.ball img {
+	 width:100px;
+	}
+	.ball .sm{
+	 width:100px;
+	}
+	.ball .mi{
+	 width:1000px;
+	}
+	.ball .la{
+	 width:1500px;
+	}
+	
+	</style>
+
+</head>
+<body>
+	<div class = "ball"	>
+		<img src = "img/ball.jpg" id = "ball" class = "sm">
+	</div>
+	
+	
+	<script>
+	var n = 0;
+	ball.addEventListener("click", function() {
+	
+		if (n==0){
+		ball.classList.add("sm");
+		ball.classList.remove("mi");
+		ball.classList.remove("la");
+		}
+		if (n==1){
+		ball.classList.add("mi");
+		ball.classList.remove("sm");
+		ball.classList.remove("la");
+		}
+		if (n==2){
+		ball.classList.add("la");
+		ball.classList.remove("mi");
+		ball.classList.remove("sm");
+		}
+
+		n++;			if (n==3) n=0;
+
+		});
+	
+	 </script>
+</body>
+</body>
+</html>

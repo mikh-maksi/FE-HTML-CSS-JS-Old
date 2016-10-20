@@ -1,0 +1,41 @@
+/* ----------  page defaults ---------- */
+
+html {
+		font-size: 100%;
+		background-color: #333;
+		}
+
+body {
+		font-size: 62.5%;
+		font-family: Arial, Verdana, Helvetica, sans-serif;
+		background: #333;
+		color: #fff;
+		}
+		
+/* ----------  primary layout ---------- */
+
+#wrapper {
+		width: 950px;
+		margin: 0 auto;
+		}
+		
+#header {
+		padding-top: 40px;
+		width: 950px;
+		}
+		
+p {
+		font-size: 1.4em;
+		width: 400px;
+		}
+		
+a:link,		
+a:visited {
+		color: #a2b52d;
+		text-decoration: none;
+		}
+		
+a:hover, 
+a:focus {
+		border-bottom: 1px dotted #a2b52d;
+		}

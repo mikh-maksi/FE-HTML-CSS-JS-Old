@@ -81,24 +81,6 @@ li.even{
 	</style>
 </head>
 <body>
-
-
-<div id="example_j">
-<button>Загрузить</button>
-<p></p>
-</div>
-<script>
-	$("#example_j button").click(function(){
-	$.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",function(data){
-			dataObject = data;
-          $.each(data, function(i,item){
-          console.log(item.ccy);
-		  
-          });
-        });
-             });
-
-</script>
 	<ul id="results">
 	output results here.
 	</ul>

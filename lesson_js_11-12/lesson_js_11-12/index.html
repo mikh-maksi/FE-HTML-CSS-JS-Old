@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<style>
+		div{
+			border:1px solid black;
+			width:100px;
+			height:100px;
+			box-sizing: border-box ;
+		}
+		div.test{
+			background:gray;
+		}
+		.l1{
+			width:306px;
+		}
+		.in{
+			float:left;
+		}
+		.clear{
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="test"></div>
+	<script>
+	(function( $ ) {
+		$.fn.Pl = function(options) {
+		
+		var $click = this;
+			
+			var defaults = {
+				outtext:"default text",
+				font:"Arial"
+			}
+			
+			var settings = $.extend(defaults,options);
+			//alert("test");
+			
+			function showModal(){
+				$click.css("width","306px");
+				$click.append("<div class = 'l1'><div class = 'in'>"+settings.outtext+"</div><div class = 'in'>1</div><div class = 'in'>1</div></div>");
+				$click.append("<div class = 'l1'><div class = 'in'>1</div><div class = 'in'>1</div><div class = 'in'>1</div></div>");
+				$click.append("<div class = 'l1'><div class = 'in'>1</div><div class = 'in'>1</div><div class = 'in'>1</div></div>");
+				$click.append("");
+			}
+			
+			
+			$click.on('click',showModal);
+	  
+	  // Тут пишем функционал нашего плагина
+		return this;
+  };
+})(jQuery);
+	
+	$(".test").Pl({outtext:"text"});
+	</script>
+</body>
+</html>

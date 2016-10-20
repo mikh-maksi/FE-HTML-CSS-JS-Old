@@ -5,9 +5,6 @@ function go (e){
 }
 
 
-
-
-
 var count=0, timerId;
 in1.addEventListener("click",step);
 function step (e){

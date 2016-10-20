@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+</head>
+
+<body>
+	<div id  = block>
+		<input type = checkbox id = n1>
+		<input type = checkbox id = n2>
+		<input type = checkbox id = n3>
+	</div>
+	<button id = send>send</button>
+	<script>
+	var answers = [0,1,0];
+	$("#send").click(function(){
+	$("#block").each(function(i) {
+   console.log($(this));                                 
+});  
+		var name;
+			$("#block input").each(function(i) {
+			console.log($("#block input").eq(i)[0].checked);
+			})
+		
+		console.log("ok");
+		
+		
+	});
+</script>
+</body>
+</html>
