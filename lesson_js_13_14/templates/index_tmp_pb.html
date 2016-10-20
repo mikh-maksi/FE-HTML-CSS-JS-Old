@@ -50,20 +50,33 @@ $(function(){
 
   var dataObject = {
     members:[
-    {id:1, name:"Vasja", text:   "ok"},
-    {id:9, name:"Petja", text:   "ok"},
-    {id:15, name:"Max", text:  "fail"},
-    {id:22, name:"Mike", text:  "ok"},
-    {id:78, name:"Bill", text:  "ok"},
-    {id:876, name:"Stive", text: "ok"},
-    {id:1033, name:"Serge", text:"ok"},
-    {id:7899, name:"Victor", text:"ok"}
-    ]
+          {ccy:"RUR", base_ccy:"UAH",buy:"0.28000",sale:"0.32000" },
+          {ccy:"EUR",base_ccy:"UAH",buy:"19.20000",sale:"20.00000"},
+          {ccy:"USD",base_ccy:"UAH",buy:"15.50000",sale:"15.85000"},
+          {ccy:"USD",base_ccy:"UAH",buy:"15.50000",sale:"15.85000"}
+          ]
+        
   }; // -> End of dataObject
+  var dat;
+  $.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",function(data){
+          dat = data;
+          $.each(data, function(i,item){
+
+          dataObject.members[i].ccy=item.ccy;
+          dataObject.members[i].base_ccy=item.base_ccy;
+          dataObject.members[i].buy=item.buy;
+          dataObject.members[i].sale=item.sale;
+          });
+
 
   var results = document.getElementById("results");
   results.innerHTML = tmpl("item_tmpl", dataObject);
 
+
+
+        });
+  //dataObject = {d:data};
+  
 });
 
 	</script>
@@ -83,33 +96,18 @@ li.even{
 <body>
 
 
-<div id="example_j">
-<button>Загрузить</button>
-<p></p>
-</div>
-<script>
-$(document).ready(function () {
-  $.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",function(data){
-          $.each(data, function(i,item){
-          console.log(item.ccy);
-      
-          });
-        });
-             });
 
-
-</script>
 	<ul id="results">
 	output results here.
 	</ul>
 	
-------------------------------------------------------------
 
 
 <script type="text/html" id="item_tmpl">
+
   <% for(var i=0;i<members.length;i++){%>
 	
-	<li>№<%=i+1%> <%=members[i].text%></li> 
+	<li>№<%=i+1%> | <%=members[i].ccy%> | <%=members[i].base_ccy%> | <%=members[i].buy%> | <%=members[i].sale%> </li> 
   
   <% } %>
 </script>

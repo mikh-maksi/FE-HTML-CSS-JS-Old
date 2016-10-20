@@ -16,7 +16,8 @@
 <p></p>
 </div>
 <script>
-	$("#example_j button").click(function(){
+$(document).ready(function () {
+
 $.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",function(data){
           $.each(data, function(i,item){
           console.log(item.ccy);
@@ -24,6 +25,7 @@ $.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",fun
           });
         });
              });
+
 
 </script>
 
