@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+	<style>
+		#example_j{border:solid 1px #999; margin:5px; padding:10px}
+	</style>
+</head>
+<body>
+
+<div id="example_j">
+<button>Загрузить</button>
+</div>
+<script>
+var xml_data;
+$("#example_j button").click(function(){
+$.get("https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5",
+function(xml){
+console.log(xml);
+console.log($(xml).find("exchangerate").each(function (i,data) {console.log(data)
+console.log($(this).attr("ccy"),$(this).attr("buy"),$(this).attr("sale"));}));},"xml");
+});
+			 
+
+
+</script>
+</body>
+</html>

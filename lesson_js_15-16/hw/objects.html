@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var animal = {name:"jack", age:2,canspeak:"yes"};
+
+		var cat = {name:"Vasja", age:3, whatsay:"mjau"};
+
+		cat.__proto__= animal;
+		console.log(cat);
+		console.log(cat.canspeak);
+		console.log(cat.whatsay);
+
+		
+		function World (){
+			this.sky = "blue";
+		}
+		var newWorld = new World();
+		
+		function Company(){
+			this.name = "google";
+			this.people=10000;
+			this.sayhello = function (){alert("hello")};
+		}
+		Company.prototype = newWorld;
+		var newcompany = new Company();
+		
+		console.log(newcompany);
+		console.log(newcompany.sky);
+	</script>
+</body>
+</html>

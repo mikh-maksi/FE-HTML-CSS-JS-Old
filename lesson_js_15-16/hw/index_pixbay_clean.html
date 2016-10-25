@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<style>
+#example_j{border:solid 1px #999; margin:5px; padding:10px}
+</style>
+
+</head>
+<body>
+
+<input id = "search">
+<button id = "go">Загрузить</button>
+<button id="clear">Очистить</button>
+<div id="example_j">
+
+<p></p>
+</div>
+
+<div >
+
+<p></p>
+</div>
+
+<script>	
+	$("#go").click(function(){
+	var txt = $("#search").val();
+	console.log(txt);
+	$.getJSON("https://pixabay.com/api/?key=3118779-be29778b1b1db18e334fc6de3&q="+txt+"&image_type=photo",
+		function(data){
+		console.log(data);
+    
+		$.each(data.hits, function(i,item){
+          $("<img/>").attr("src", item.previewURL).appendTo("#example_j");
+          });
+        });
+             });
+	$("#clear").click(function(){
+		$("#example_j").empty();
+		
+	});
+</script>
+</body>
+</html>

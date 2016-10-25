@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<style>
+#example_j{border:solid 1px #999; margin:5px; padding:10px}
+</style>
+
+</head>
+<body>
+
+<input id = "search">
+
+<div id="example_j">
+<button>Загрузить</button>
+<p></p>
+</div>
+<script>	
+	$("#example_j button").click(function(){
+	var txt = $("#search").val();
+	console.log(txt);
+	$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+txt+"&tagmode=any&format=json&jsoncallback=?",
+		function(data){
+		console.log(data);
+          $.each(data.items, function(i,item){
+          $("<img/>").attr("src", item.media.m).appendTo("#example_j");
+          if ( i == 3 ) return false;
+          });
+        });
+             });
+
+</script>
+</body>
+</html>

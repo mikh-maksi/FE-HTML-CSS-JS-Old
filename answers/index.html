@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+	<button id ="send">send</button>
+	<script>
+		$("#send").click(function(){
+		$.post('http://tail.business-labs.com.ua/test/', function(data) {
+  $('#result').html(data);
+  console.log(data);
+  for (var i=0; i<data.length;i++)
+  	{console.log(data[i].created_at);}
+
+  			});
+
+}
+			);
+	</script>
+</body>
+</html>

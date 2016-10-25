@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src='https://cdn.jsdelivr.net/lodash/4.12.0/lodash.min.js'></script>
+	<style>
+		#example_j{border:solid 1px #999; margin:5px; padding:10px}
+	</style>
+</head>
+<body>
+
+<div id="example_j">
+<button>Загрузить</button>
+</div>
+<script>
+var a= [];
+$("#example_j button").click(function(){
+$.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",
+function(data){
+		console.log(data);
+		console.log(_.now());
+		console.log(_.add(3,4));
+		var res = _.min(data);
+		
+		console.log(res);
+          $.each(data, function(i,item){
+		  a[i]=item.buy;
+			console.log(item.ccy, item.base_ccy, item.buy, item.sale);
+			$("<p>").html(item.ccy+" "+ item.base_ccy+" "+ item.buy+" "+ item.sale).appendTo("#example_j");
+
+		// $("<img/>").attr("src", item.media.m).appendTo("#example_j");
+         // if ( i == 1 ) return false;
+          });
+		     console.log("a"+a);
+			 var res = _.max(a);
+			 console.log(res);
+        });
+          
+			 });
+
+</script>
+</body>
+</html>
