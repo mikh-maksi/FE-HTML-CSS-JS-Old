@@ -17,7 +17,7 @@
 $("#example_j button").click(function(){
 $.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",
 function(data){
-//console.log(data);
+console.log(data);
           $.each(data, function(i,item){
 			console.log(item.ccy, item.base_ccy, item.buy, item.sale);
 			$("<p>").html(item.ccy+" "+ item.base_ccy+" "+ item.buy+" "+ item.sale).appendTo("#example_j");

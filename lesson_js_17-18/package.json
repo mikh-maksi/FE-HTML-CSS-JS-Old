@@ -1,0 +1,26 @@
+{
+  "name": "grunt",
+  "version": "1.0.0",
+  "description": "grunt ",
+  "main": "index.html",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt-concat-css": "^0.3.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "igit"
+  },
+  "keywords": [
+    "grunt"
+  ],
+  "author": "max",
+  "license": "ISC"
+}
