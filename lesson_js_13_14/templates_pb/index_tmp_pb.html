@@ -4,53 +4,15 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src = "tmpl.js"></script>
 	<script>
-	// see:
-// http://ejohn.org/blog/javascript-micro-templating/
-
-// Simple JavaScript Templating
-// John Resig - http://ejohn.org/ - MIT Licensed
-(function(){
-  var cache = {};
-
-  this.tmpl = function tmpl(str, data){
-    // Figure out if we're getting a template, or if we need to
-    // load the template - and be sure to cache the result.
-    var fn = !/\W/.test(str) ?
-      cache[str] = cache[str] ||
-        tmpl(document.getElementById(str).innerHTML) :
-
-      // Generate a reusable function that will serve as a template
-      // generator (and which will be cached).
-      new Function("obj",
-        "var p=[],print=function(){p.push.apply(p,arguments);};" +
-
-        // Introduce the data as local variables using with(){}
-        "with(obj){p.push('" +
-
-        // Convert the template into pure JavaScript
-        str
-          .replace(/[\r\t\n]/g, " ")
-          .split("<%").join("\t")
-          .replace(/((^|%>)[^\t]*)'/g, "$1\r")
-          .replace(/\t=(.*?)%>/g, "',$1,'")
-          .split("\t").join("');")
-          .split("%>").join("p.push('")
-          .split("\r").join("\\'")
-      + "');}return p.join('');");
-
-    // Provide some basic currying to the user
-    return data ? fn( data ) : fn;
-  };
-})();
-
-
+	
 // Demo data.
 $(function(){
 
   var dataObject = {
     members:[
-          {ccy:"RUR", base_ccy:"UAH",buy:"0.28000",sale:"0.32000" },
+          {ccy:"RUR", base_ccy:"UAH",buy:"0.00000",sale:"0.00000" },
           {ccy:"EUR",base_ccy:"UAH",buy:"19.20000",sale:"20.00000"},
           {ccy:"USD",base_ccy:"UAH",buy:"15.50000",sale:"15.85000"},
           {ccy:"USD",base_ccy:"UAH",buy:"15.50000",sale:"15.85000"}
@@ -58,24 +20,18 @@ $(function(){
         
   }; // -> End of dataObject
   var dat;
-  $.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",function(data){
-          dat = data;
-          $.each(data, function(i,item){
 
+  $.getJSON("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",function(data){
+          $.each(data, function(i,item){
           dataObject.members[i].ccy=item.ccy;
           dataObject.members[i].base_ccy=item.base_ccy;
           dataObject.members[i].buy=item.buy;
           dataObject.members[i].sale=item.sale;
           });
 
-
   var results = document.getElementById("results");
   results.innerHTML = tmpl("item_tmpl", dataObject);
-
-
-
-        });
-  //dataObject = {d:data};
+   });
   
 });
 

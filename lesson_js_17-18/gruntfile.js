@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
 
 grunt.initConfig({
+
   cssmin: {
   target: {
     files: [{
@@ -13,6 +14,7 @@ grunt.initConfig({
     }]
   }
 },
+
   concat_css: {
     options: {
       // Task-specific options go here. 
@@ -22,6 +24,7 @@ grunt.initConfig({
       dest: "css/styles.css"
     },
   },
+
   concat: {
     options: {
       separator: '',
@@ -38,5 +41,6 @@ grunt.initConfig({
   grunt.loadNpmTasks('grunt-concat-css');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', ['concat','concat_css','cssmin']);
+  grunt.registerTask('default', ['concat','concat_css','cssmin']);
+  grunt.registerTask('concat', ['concat']);
 };
