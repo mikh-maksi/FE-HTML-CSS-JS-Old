@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//let
+	let a=3;
+	console.log(a);
+
+	//стрелочные функции
+	let addition = (a, b) => a + b;
+	console.log(addition(2,3));
+
+	let arr = ['apple', 'banana', 'orange'];
+
+	let breakfast = arr.map(fruit => {
+	    return fruit + 's';
+	});
+
+	console.log(breakfast); 
+	/*Функции-стелки области видимости не имеют*/
+/*
+	function Person() {
+	    this.age = 0;
+
+	    setInterval(() => {
+	        this.age++;
+	        console.log(this.age); // `this` относится к объекту person
+	    }, 1000);
+	}
+
+	var p = new Person();
+*/
+
+	</script>
+</body>
+</html>
