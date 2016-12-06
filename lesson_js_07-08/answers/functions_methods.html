@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//methods. Variant 1
+		student={
+			name :"max",lastname:"Ivanov", sayName: function(){console.log(this.name);}
+		}
+		console.log(student);
+		student.sayName();
+
+		function sayName()
+		{
+			var name = "max";
+			console.log(name);
+
+		}
+		sayName();
+		//methods. Variant 2
+		student.sayLastname = function(){
+			console.log(this.lastname);
+		}
+		student.sayLastname();
+		
+	</script>
+</body>
+</html>

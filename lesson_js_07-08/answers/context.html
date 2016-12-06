@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function func() {
+		  console.log( this );
+		  console.log( this.firstName );
+		}
+
+		var user = { firstName: "Вася" };
+		var admin = { firstName: "Админ" };
+
+
+		user.sayFirstName = func;
+		admin.sayFirstName = func;
+
+		// this равен объекту перед точкой:
+		user.sayFirstName(); // Вася
+		admin.sayFirstName(); // Админ
+		admin['sayFirstName'](); // Админ (не важно, доступ к объекту через точку или квадратные скобки)
+
+
+	</script>
+</body>
+</html>

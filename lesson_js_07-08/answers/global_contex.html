@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function func() {
+  		console.log( this ); // выведет [object Window] или [object global]
+	}
+
+	function f1(){
+		func();
+	}
+	f1();
+	</script>
+</body>
+</html>
