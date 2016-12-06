@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select id = "send">
+		<option value="1">Киев</option>
+		<option value="2">Харьков</option>
+		<option value="3">Одесса</option>
+		<option value="4">Днепр</option>
+		<option value="5">Львов</option>
+	</select>
+	<select id ="recive">
+		<option value="1">Киев</option>
+		<option value="2">Харьков</option>
+		<option value="3">Одесса</option>
+		<option value="4">Днепр</option>
+		<option value="5">Львов</option>
+	</select>
+	<div class ="service_type" >
+	<select id ="service_type">
+		<option value="1">Адрес-Адрес</option>
+		<option value="2">Адрес-Отделение</option>
+		<option value="3">Отделение-Адрес</option>
+		<option value="4">Отделение-Отделение</option>
+	</select>
+	</div>
+	<div class ="send_type">
+	<select id ="send_type">
+		<option value="1">Посылки и грузы</option>
+		<option value="2">Документы</option>
+		<option value="3">Шины и диски</option>
+		<option value="4">Отделение-Отделение</option>
+	</select>
+	</div>
+	<div class ="wt">
+	Фактический вес: <input type="text" id ="wt">
+	</div>
+	<div class="size">
+	Габариты отправки: <input type="text" id = "size_w">
+	 	<input type="text" id = "size_h"> 
+	 	<input type="text" id ="size_d">
+	</div>
+	<div class = "number">
+	Количество мест: <input type="text" id = "number">
+	</div>
+	<div class = "cost">
+	Объявленная стоимость: <input type="text" id = "cost"> грн. 
+	</div>
+	<div class = "pack">
+	Услуга "Упаковка" <input type="checkbox" id = "pack">
+	</div>
+	<div class = "back">
+	Послуга "Обратная доставка" <input type="checkbox" id = "back">
+	</div>
+	<button id = "send">calculate</button>
+	<script type="text/javascript" src = "js/js.js"></script>
+</body>
+</html>
